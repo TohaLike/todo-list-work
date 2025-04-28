@@ -10,7 +10,6 @@
 
     ```bash
     git clone https://github.com/TohaLike/todo-list-work.git
-    cd ваш-репозиторий
     ```
 
 2. **Создать `.env` файлы**:
