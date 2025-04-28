@@ -12,14 +12,11 @@ export const useDeleteTask = () => {
 
   // const url = `tasks/`;
 
-
   const { trigger, data, isMutating } = useSWRMutation(
     ["tasks/delete"],
     (url, { arg }: { arg: TaskId }) => TaskService.deleteTask(arg.id),
     {
-      onSuccess: () => {
-        mutate([url]);
-      },
+      onSuccess: () => mutate([url]),
     }
   );
 

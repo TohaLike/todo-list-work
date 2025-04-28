@@ -1,14 +1,13 @@
+
 import TaskService from "@/services/TaskService";
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 import useSWR from "swr";
 
-export const useGetTasks = () => {
-  const searchParams = useSearchParams();
-  const param = searchParams.get("completed");
+export const useGetTasks = (param: string) => {
+  // const searchParams = useSearchParams();
+  // const param = searchParams.get("completed");
 
   const url = param ? `tasks/?completed=${param}` : `tasks/`;
-
-  // const url = `tasks/`;
 
 
   const { data, error, isLoading } = useSWR(
