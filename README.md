@@ -19,7 +19,7 @@
         Перейдите в папку фронтенда и создайте пустой файл `.env`:
 
         ```bash
-        cd frontend
+        cd ../todo-list-frontend
         touch .env
         ```
 
@@ -27,7 +27,7 @@
         Перейдите в папку бэкенда и создайте пустой файл `.env`:
 
         ```bash
-        cd ../backend
+        cd ../todo-list-backend
         touch .env
         ```
 
