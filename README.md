@@ -9,7 +9,7 @@
 1. **Клонировать репозиторий**:
 
     ```bash
-    git clone https://github.com/ваш-репозиторий.git
+    git clone [https://github.com/ваш-репозиторий.git](https://github.com/TohaLike/todo-list-work.git)
     cd ваш-репозиторий
     ```
 
