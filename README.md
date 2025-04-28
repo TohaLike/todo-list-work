@@ -20,7 +20,7 @@
         Перейдите в папку фронтенда и скопируйте пример `.env.example` в новый файл `.env`:
 
         ```bash
-        cd todo-list-frontend
+        cd ../todo-list-frontend
         cp .env.example .env
         ```
 
