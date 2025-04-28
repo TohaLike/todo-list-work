@@ -1,9 +1,10 @@
 "use client";
-import React, { Suspense, useState } from "react";
+import React, { Suspense, use, useEffect, useState } from "react";
 import { Box, CircularProgress, MenuItem, TextField } from "@mui/material";
 import { CreateTask, Task } from "@/components/shared";
 import { useGetTasks } from "@/hooks/useGetTasks";
 import { TaskProps } from "@/types";
+import { useRouter } from "next/navigation";
 
 const currencies = [
   {
@@ -23,11 +24,22 @@ const currencies = [
 export const TasksPage = () => {
   const [selectedType, setSelectedType] = useState<string>("allTasks");
 
+  const router = useRouter();
   const { tasks, isLoading } = useGetTasks(selectedType);
 
   const handleChangeList = (event: React.ChangeEvent<{ value: string }>) => {
+    const params = new URLSearchParams(window.location.search);
+    params.set("completed", event.target.value);
+    if (event.target.value === "allTasks") params.delete("completed");
+    router.push(`?${params.toString()}`);
     setSelectedType(event.target.value);
   };
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setSelectedType(params.get("completed") || "allTasks");
+  }, []);
+
 
   if (isLoading)
     return (

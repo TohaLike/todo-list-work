@@ -8,9 +8,7 @@ export default function Home() {
     <div>
       <main>
         <Container>
-          {/* <Suspense> */}
-            <TasksPage />
-          {/* </Suspense> */}
+          <TasksPage />
         </Container>
       </main>
     </div>
